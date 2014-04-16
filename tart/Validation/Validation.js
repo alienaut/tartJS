@@ -102,6 +102,11 @@ tart.Validation.is.equal = function(arg1, arg2) {
     return arg1 == arg2;
 };
 
+tart.Validation.is.url = function(text) {
+    var patern = /^([a-z]+:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$/;
+    return patern.test(text); 
+}
+
 
 /**
  * Checks for strings' min length

@@ -46,6 +46,35 @@ describe('Validation', function() {
             });
 
         });
+        
+        describe('validation.is.url', function() {
+
+            it('should validate urls like http://www.canihazcheezburger.com', function() {
+                var result = validator.is.url('http://www.canihazcheezburger.com');
+                expect(result).toBeTruthy();
+            });
+
+            it('should validate urls like www.cheezburger.com', function() {
+                var result = validator.is.url('www.cheezburger.com');
+                expect(result).toBeTruthy();
+            });
+
+            it('shoud validate urls like peynir.com.tr', function(){
+                var result = validator.is.url('peynir.com.tr');
+                expect(result).toBeTruthy();
+            });
+
+            it('should not validate urls which contains non english character', function() {
+                var result = validator.is.url('http://müselles.çom');
+                expect(result).toBeFalsy();
+            });
+
+            it('should validate other protocols urls than http', function(){
+                var result = validator.is.url('git://github.com/dogy/woof-woof.git');
+                expect(result).toBeTruthy();
+            });
+
+        });
 
         describe('Validation.is.notOnlySpace', function() {
             it('should not validate an input which has only white space', function() {
