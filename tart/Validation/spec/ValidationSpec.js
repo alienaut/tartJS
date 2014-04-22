@@ -64,7 +64,7 @@ describe('Validation', function() {
                 expect(result).toBeTruthy();
             });
 
-            it('should not validate urls which contains non english character', function() {
+            it('should not validate urls which contain non-latin characters', function() {
                 var result = validator.is.url('http://müselles.çom');
                 expect(result).toBeFalsy();
             });
