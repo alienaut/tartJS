@@ -74,6 +74,11 @@ describe('Validation', function() {
                 expect(result).toBeTruthy();
             });
 
+            it('should not be case sensetive', function() {
+                var result = validator.is.url('httP://KunG-FU.CoM');
+                expect(result).toBeTruthy();
+            });
+
         });
 
         describe('Validation.is.notOnlySpace', function() {

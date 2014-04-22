@@ -103,7 +103,7 @@ tart.Validation.is.equal = function(arg1, arg2) {
 };
 
 tart.Validation.is.url = function(text) {
-    var pattern = /^([a-z]+:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$/;
+    var pattern = /^([a-zA-Z]+:\/\/)?([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})([\/\w \?=.-]*)*\/?$/;
     return pattern.test(text); 
 }
 
